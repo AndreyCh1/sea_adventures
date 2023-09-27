@@ -30,7 +30,8 @@ html(lang="en")
                     h3.mb-3 обери свій план подорожі
                     p.discription Наша фірма -лідер на ринку у своїй сфері
                     svg.arrow
-                        use(xlink:href="#arrow")
+                        a(href="#main")
+                            use(xlink:href="#arrow")
         main.main#main
             .wrapper.container
                 .travel_plans.row
@@ -47,8 +48,8 @@ html(lang="en")
                             +figures(figures.special_order)
                         .all_plans_button.text-center
                             a.d-inline-block(href="#") дивитись усі плани
-                            svg.arrow_all_plans
-                                use(xlink:href="#arrow_all_plans")
+                                svg.arrow_all_plans
+                                    use(xlink:href="#arrow_all_plans")
                 hr
                 .main_offer.d-flex
                     picture
