@@ -1,0 +1,157 @@
+-
+    let menu = [
+        {
+            name: "головна",
+            url: "#"
+        },
+        {
+            name: "послуги",
+            url: "#"
+        },
+        {
+            name: "про компанію",
+            url: "#"
+        },
+        {
+            name: "акції",
+            url: "#"
+        },
+        {
+            name: "партнери",
+            url: "#"
+        },
+        {
+            name: "відгуки",
+            url: "#"
+        },
+        {
+            name: "контакти",
+            url: "#"
+        }
+    ]
+
+-
+    let figures = {
+        bicycle_tour: {
+            src: "img/bicycle_tour",
+            alt: "bicycle_tour_plan",
+            span: "Тур на велосипедах",
+            price: "335",
+            fav: false,
+            description: [
+                "Подорожуючи  на велосипеді, ви поринете в атмосферу мальовничих гір, чарівнмх краєвидів та шалених пригод."
+            ],
+            url: "#"
+        },
+        excursion_to_the_island: {
+            src: "img/excursion_to_the_island",
+            alt: "excursion_to_the_island_plan",
+            span: "Екскурсія на острів",
+            price: "500",
+            fav: true,
+            description: [
+                "Подорож на острів занурить Вас у незабутнні пригоди. Неймовірна краса у будь-яку пору року."
+            ],
+            url: "#"
+        },
+        special_order: {
+            src: "img/special_order",
+            alt: "special_order_plan",
+            span: "Особливе замовлення",
+            price: "250",
+            fav: true,
+            description: [
+                "Обираючи цю подорож, Ви самостійно робите її незабутнбою та не схожою на будь-які інші. "
+            ],          
+            url: "#"
+        }
+    }
+
+-
+    let special = {
+        romantic_trip: {
+            src: "img/romantic_trip",
+            alt: "romantic_trip_plan",
+            span: "Романтична подорож на 2",
+            price: "2599",
+            fav: true,
+            description: [
+                "Подорож у найромантичніші куточки світу, занурить вас у дивовижні пейзажі природи."
+            ],
+            url: "#"
+        },
+        bike_tour: {
+            src: "img/bike_tour",
+            alt: "bike_tour_plan",
+            span: "Велотур",
+            price: "555",
+            fav: true,
+            description: [
+                "Бажаєте прокататись з вітерцем, та ще й з критим краєвидом довкола? Тоді швидше замовляй велотур!"
+            ],
+            url: "#"
+        },
+        to_the_islands: {
+            src: "img/to_the_islands!",
+            alt: "to_the_islands!_plan",
+            span: "На острови!",
+            price: "1559",
+            fav: true,
+            description: [
+                "Хочеш зануритись у тишу, місце де не має натовпу, та панує дика природа? Тоді вперед за пригодами!"
+            ],
+            url: "#"
+        },
+        surfing: {
+            src: "img/surfing",
+            alt: "surfing_plan",
+            span: "Катання на серфінгу",
+            price: "999",
+            fav: true,
+            description: [
+                "Хочеш отримати екстрим та мега вражень одночасно? Тоді вперед ловити хвилі!"
+            ],
+            url: "#"
+        }
+    }
+
+mixin menu (items)
+    for item in items
+        li
+            a(href=item.url) #{item.name}
+
+mixin figures (item)
+    figure.col-md-4.text-center
+        figcaption
+            if item.fav
+                .favorite_plans_mark
+                    svg.fav_icon
+                        use(xlink:href="#fav_icon")
+            else
+            picture
+                source(srcset=item.src + ".webp", type="image/webp")
+                img.picture(src=item.src + ".png", alt=item.alt)
+            h4 #{item.span}
+            p.price #{item.price} грн*
+            p.product_description.text-start #{item.description}
+
+mixin special (item)
+    figure.col-md-3
+        figcaption
+            if item.fav
+                .favorite_plans_mark
+                    svg.fav_icon
+                        use(xlink:href="#fav_icon")
+            else
+            picture
+                source(srcset=item.src + ".webp", type="image/webp")
+                img.picture.w-100(src=item.src + ".png", alt=item.alt)
+            .special_plan_discription
+                h4 #{item.span}
+                p.product_description.text-start #{item.description}
+                .buy_block.d-flex.align-items-center
+                    p.price.m-0 #{item.price} грн.
+                    .d-flex.align-items-center
+                        a.d-block(href="#") замовити
+                        svg.arrow_special_plan
+                            use(xlink:href="#arrow_special_plan")

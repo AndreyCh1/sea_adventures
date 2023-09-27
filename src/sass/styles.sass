@@ -1,0 +1,592 @@
+@import components/fonts
+
+=media ($size)
+    @media screen and ( min-width: #{$size}px )
+        @content
+
+body
+    margin: 0
+
+hr
+    margin: 5px 0
+
+h2
+    letter-spacing: 2px
+    line-height: 66px
+    font: 400 56px "Rubik"
+    text-transform: uppercase
+    color: #ffffff
+
+h3
+    letter-spacing: 1px
+    font: 400 36px "Rubik"
+    text-transform: uppercase
+    color: #333
+
+h4
+        font: 400 18px "Rubik"
+        color: #333
+
+.wrapper
+    margin: auto
+    // padding: 0 14.3rem
+    max-width: 78rem
+
+.header
+    padding-top: 35px
+    background: linear-gradient(transparent 75%, #f5f8fa 100%), url(../img/header_background.jpg) center bottom / cover
+
+    h1
+        margin-bottom: 10px
+        letter-spacing: 1px
+        font: 400 72px/72px "Rubik"
+        text-align: center
+        text-transform: uppercase
+        color: #fff
+
+.main_navigation
+    justify-content: space-between
+    // align-items: center
+    row-gap: 20px
+    // +media(392)
+    //     flex-wrap: nowrap
+
+    b
+        color: #fff
+
+.logo
+    text-decoration: none
+
+    img
+        // margin-right: 8px
+
+    b
+        margin: 0
+        font: 500 36px "Exo 2"
+
+.list
+    list-style: none
+
+    li
+        
+        &:last-child
+
+            a
+                padding-right: 0
+
+    a
+        display: inline-block
+        padding: 13px 15px
+        letter-spacing: 1px
+        font: 400 14px "Rubik"
+        text-decoration: none
+        text-transform: uppercase
+        color: #fff
+        transition: all .5s ease
+
+        &:hover
+            color: #ffb700
+
+.header_section
+    padding: 200px 0 263px
+
+.header_discription
+    position: relative
+    flex-direction: column
+    // margin: 170rem 0
+
+    &:before,
+    &:after
+        position: absolute
+        content: ''
+        left: calc(50% - 185px)
+        width: 370px
+        border: 4px solid #fff
+        opacity: 0.102
+
+    &:before
+        top: -50px
+        height: 40px
+        border-bottom: none
+
+    &:after
+        bottom: -50px
+        height: 93px
+        border-top: none
+        z-index: 0
+
+    p
+        margin: 10px 0 25px
+        max-width: 528px
+
+.discription
+    margin: 0
+    font: 400 italic 16px/24px "Rubik"
+    color: #fff
+
+.more_detail_button,
+.main_offer_buttons
+    z-index: 1
+
+    a
+        display: inline-block
+        padding: 13.5px 30px
+        letter-spacing: 1px
+        font: 400 16px "Rubik"
+        text-transform: uppercase
+        text-decoration: none
+        color: #fdfcfb
+        background-color: #ffb700
+        border-radius: 23px
+        box-shadow: 0px 4px 10.5px rgba(193,139,1,0.24)
+        // box-sizing: border-box
+        transition: all .5s ease
+
+        &:hover
+            // color: $lightGray
+            // background-color: #fd8300
+            color: #ffb700
+            background-color: #fff
+            // border: 2px solid #ffb700
+            // box-shadow: 0px 4px 10.5px rgba(193,139,1,0.24), 
+            // box-shadow: 4px 0px 10.5px rgba(193,139,1,0.24)
+
+.pricing_table
+    flex-direction: column
+    padding-bottom: 95px
+
+    h3
+        // margin-bottom: 15px
+        max-width: 316px
+
+    p
+        margin-bottom: 33px
+        color: #333
+
+.arrow
+    // margin: auto
+    width: 18px
+    height: 20px
+
+//     a
+//         position: relative
+//         // width: 100%
+//         // height: 100%
+//         // transition: all .5s ease
+
+//         // &:hover
+//         //     border-radius: 32rem
+//         //     background-color: $transparent
+//         //     border-color: #fff
+
+//         //     &:before
+//         //         background-color: #fff
+
+//         //     &:after
+//         //         border: 2rem solid #fff
+//         //         border-top: none
+//         //         border-right: none
+        
+//         &:before,
+//         &:after
+//             position: absolute
+//             content: ''
+//             left: 0
+//             bottom: -44px
+//             width: 12px
+//             height: 12px
+//             border: 3px solid #000
+//             border-top: none
+//             border-right: none
+//             transform: rotate(-45deg)
+
+//         &:after
+//             bottom: -53px
+
+.main
+    background-color: #f5f8fa
+
+.travel_plans
+    padding: 40px 0 62px
+    // column-gap: 30px
+
+.grey
+    color: #555
+
+.mb-20
+    margin-bottom: 20px
+
+.additional_text
+    font: 400 13px "Rubik"
+    color: #bbb
+
+.offers
+    margin-bottom: 32px
+
+    figure
+        position: relative
+        padding: 0 15px
+        margin: 0
+
+    figcaption
+        padding: 30px 20px
+        transition: all .5s ease
+
+        &:hover
+            background-color: #fff
+            box-shadow: 0px 4px 10.5px rgba(3,20,31,0.05)
+
+    img
+        margin-bottom: 25px
+
+.favorite_plans_mark
+    position: absolute
+    // display: inline-block
+    top: 0
+    left: 15px
+    width: 60px
+    height: 60px
+    background: linear-gradient(to right bottom, #26cb15 50%, transparent 50%)
+
+.fav_icon
+    position: absolute
+    top: 9px
+    left: 10px
+    width: 16px
+    height: 16px
+
+
+.price
+    margin: 7px 0
+    font: 400 24px "Rubik"
+    color: #09f
+
+.product_description
+    margin-bottom: 20px
+    font: 400 13px "Rubik"
+    color: #999
+
+.all_plans_button
+
+    a
+        // position: relative
+        // max-width: 140px
+        font: 400 12px "Rubik"
+        text-decoration: none
+        text-transform: uppercase
+        color: #09f
+
+        // &:before,
+        // &:after
+        //     position: absolute
+        //     content: ''
+        //     right: -18px
+        //     top: 1px
+        //     width: 11px
+        //     height: 11px
+        //     background-color: rgba(255,183,0,0)
+        //     border: 1px solid #09f
+        //     border-radius: 5px
+
+        // &:after
+        //     top: 4px
+        //     right: -14.5px
+        //     width: 5px
+        //     height: 5px
+        //     border-top: none
+        //     border-left: none
+        //     border-radius: 2px
+        //     transform: rotate(-45deg)
+
+.main_offer
+    padding: 75px 0
+    column-gap: 30px
+    pow-gap: 30px
+
+    h3
+        margin-bottom: 20px
+
+.main_plan_discription
+
+    p
+        margin-bottom: 35px
+        
+.dark
+    color: #333
+
+.main_offer_buttons
+    column-gap: 10px
+    pow-gap: 10px
+
+.buy_button
+
+    a
+        padding: 13.5px 24px
+
+.offer_more_detail_button
+    
+    a
+       padding: 13.5px 33px
+       color: #09f
+       background-color: rgba(0,153,255,0)
+       border: 2px solid #09f
+
+.main_plan
+    padding: 26px 46px 23px
+    background-color: #edf2f5
+
+.main_plan_price
+    margin: 15px 0
+
+// .main_offer_discription
+//     max-width: 174px
+
+.important_proposal
+    background: linear-gradient(rgba(#142f3f, .8), rgba(#142f3f, .8)), url(../img/important_proposal.jpg) center / cover
+
+.proposal_discription
+    // row-gap: 15px
+
+    h2
+        margin-bottom: 2px
+
+    p
+        max-width: 30rem
+        font: 400 16px/24px "PT Sans"
+        color: #fff
+
+    a
+        padding: 13.5px 34px
+
+.blue
+    color: #09f
+
+.review
+    position: relative
+    padding: 35px
+
+    &:before,
+    &:after
+        position: absolute
+        content: ''
+        top: 0
+        width: 200px
+        height: 235px
+        border: 4px solid #fff
+        opacity: 0.102
+
+    &:before
+        left: 0
+        border-right: none
+
+    &:after
+        right: 0
+        border-left: none
+
+.review_text
+    position: relative
+    margin-bottom: 12px
+
+    &:before
+        position: absolute
+        content: " ” "
+        left: calc(50% - 40px)
+        top: 10px
+        // width: 30px
+        // height: 30px
+        font-size: 200px
+        color: #ffb700
+
+.white
+    color: #fff
+
+.user_status
+    position: relative
+    margin-bottom: 12px
+    font: 400 14px "Rubik"
+    color: #999
+
+    &:before
+        position: absolute
+        content: ''
+        left: calc(50% - 43px)
+        top: 26px
+        width: 86px
+        height: 86px
+        background: url(../img/client_photo.jpg)
+        border-radius: 50%
+
+.special_plans
+    padding: 70px 0 88px
+
+.title_plans
+    margin-bottom: 33px
+
+.special_proposals
+
+    figure
+        position: relative
+        padding: 0 15px
+
+        figcaption
+            transition: all .5s ease
+
+            &:hover
+                background-color: #fff
+                box-shadow: 0px 4px 10.5px rgba(3,20,31,0.05)
+
+.special_plan_discription
+    padding: 20px
+
+.buy_block
+    justify-content: space-between
+
+    a
+        font: 400 13px "Rubik"
+        text-transform: uppercase
+        text-decoration: none
+        color: #ffb700
+
+.additional_information
+    padding: 82px 0
+
+.work_schedule
+    padding: 25px 20px 30px
+    // max-width: 270px
+    width: 100%
+    background: url(../img/work_schedule.jpg) center / cover
+
+.file
+    margin-bottom: 20px
+
+.work_schedule_discription,
+.nutrition_information_discription
+    font: 400 13px/19px "Rubik"
+    color: #fefefe
+
+.download_button
+
+    a
+        position: relative
+        padding: 6px 16px 6px 35px
+        font: 400 12px "Rubik"
+        text-decoration: none
+        text-transform: uppercase
+        color: #ffb700
+        border: 2px solid #ffb700
+        border-radius: 16px
+
+        &:before
+            position: absolute
+            content: ''
+            left: 16px
+            width: 15px
+            height: 11px
+            background: url(../img/download_icons.png)
+
+
+.nutrition_information
+    padding: 25px 20px 30px
+    // max-width: 270px
+    width: 100%
+    background: url(../img/nutrition_information.jpg) center / cover
+
+.nutrition_information_discription
+    margin-bottom: 27px
+
+.support
+    position: relative
+    padding: 38px 43px 0
+    // padding-top: 38px
+    width: 100%
+
+    &:before,
+    &:after
+        position: absolute
+        content: ''
+        top: 0
+        width: 48px
+        height: 270px
+        border: 4px solid #ffb700
+
+    &:before
+        left: 0
+        border-right: none
+
+    &:after
+        right: 0
+        border-left: none
+
+    a
+        margin-bottom: 23px
+        justify-content: center
+        text-decoration: none
+
+    .user_status
+        font: 400 16px "PT Sans"
+
+        &:before
+            position: absolute
+            content: ''
+            left: calc(50% - 43px)
+            top: 36px
+            width: 86px
+            height: 86px
+            background: url(../img/consultant_photo.jpg)
+            border-radius: 50%
+
+.absolute
+    position: absolute
+    top: -10px
+    left: 72px
+
+.support_discription
+    padding: 0 17px
+    margin-bottom: 30px
+    font: 400 13px "Rubik"
+    color: #999
+
+// .svg
+//     width: 21px
+//     height: 16px
+//     fill: #0099ff
+
+.arrow_all_plans,
+.arrow_special_plan
+    width: 12px
+    height: 12.5px
+
+.arrow_all_plans,
+.arrow_special_plan
+    margin-left: 7px
+
+.phone_icon
+    margin-right: 7px
+    width: 17px
+    height: 21px
+
+.phone
+
+    h4
+        color: #0099ff
+
+.footer
+
+    h4
+        padding: 18px 0 15px
+        color: #fff
+        
+.footer_main
+    min-height: 400px
+    background: linear-gradient(#f5f8fa 0%, transparent 15%), url(../img/footer_background.jpg) center / cover
+    // background: linear-gradient(transparent 75%, #f5f8fa 100%), url(../img/header_background.jpg) center bottom / cover
+
+.footer_copy
+        background-color: #1a1a1a
+
+.sprite
+    display: none
+
+
+
+    
