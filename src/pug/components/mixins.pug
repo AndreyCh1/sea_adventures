@@ -122,7 +122,7 @@ mixin menu (items)
 
 mixin figures (item)
     figure.col-md-4.text-center
-        figcaption
+        figcaption.h-100
             if item.fav
                 .favorite_plans_mark
                     svg.fav_icon
@@ -137,7 +137,7 @@ mixin figures (item)
 
 mixin special (item)
     figure.col-md-3
-        figcaption
+        figcaption.h-100
             if item.fav
                 .favorite_plans_mark
                     svg.fav_icon

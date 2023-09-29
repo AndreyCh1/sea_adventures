@@ -33,7 +33,7 @@ h4
     max-width: 78rem
 
 .header
-    padding-top: 35px
+    padding-top: 30px
     background: linear-gradient(transparent 75%, #f5f8fa 100%), url(../img/header_background.jpg) center bottom / cover
 
     h1
@@ -55,13 +55,20 @@ h4
         color: #fff
 
 .logo
+    position: relative
+    padding-left: 41px
     text-decoration: none
 
     img
+        position: absolute
         // margin-right: 8px
+        left: 0
+        top: 5px
+
+    p
+        margin-bottom: 14px
 
     b
-        margin: 0
         font: 500 36px "Exo 2"
 
 .list
@@ -125,7 +132,7 @@ h4
     color: #fff
 
 .more_detail_button,
-.main_offer_buttons
+.main_offer_button
     z-index: 1
 
     a
@@ -255,9 +262,8 @@ h4
     width: 16px
     height: 16px
 
-
 .price
-    margin: 7px 0
+    margin: 10px 0
     font: 400 24px "Rubik"
     color: #09f
 
@@ -299,24 +305,23 @@ h4
         //     transform: rotate(-45deg)
 
 .main_offer
-    padding: 75px 0
-    column-gap: 30px
-    pow-gap: 30px
+    padding: 75px 0 70px
 
     h3
-        margin-bottom: 20px
+        margin-bottom: 18px
 
-.main_plan_discription
+// .main_offer_plan
+//     padding-bottom: 8px
 
-    p
-        margin-bottom: 35px
+.plan_discription
+    margin-bottom: 32px
         
 .dark
     color: #333
 
-.main_offer_buttons
-    column-gap: 10px
-    pow-gap: 10px
+// .main_offer_buttons
+//     column-gap: 10px
+//     pow-gap: 10px
 
 .buy_button
 
@@ -326,20 +331,25 @@ h4
 .offer_more_detail_button
     
     a
-       padding: 13.5px 33px
-       color: #09f
-       background-color: rgba(0,153,255,0)
-       border: 2px solid #09f
+        display: inline-block
+        padding: 11.5px 33px
+        letter-spacing: 1px
+        font: 400 16px "Rubik"
+        text-transform: uppercase
+        text-decoration: none
+        color: #09f
+        background-color: rgba(0,153,255,0)
+        border: 2px solid #09f
+        border-radius: 23px
 
 .main_plan
-    padding: 26px 46px 23px
+    padding: 42px 42px 36px
+    // max-width: 17.93rem
     background-color: #edf2f5
+    box-sizing: border-box
 
 .main_plan_price
-    margin: 15px 0
-
-// .main_offer_discription
-//     max-width: 174px
+    margin: 0 0 14px
 
 .important_proposal
     background: linear-gradient(rgba(#142f3f, .8), rgba(#142f3f, .8)), url(../img/important_proposal.jpg) center / cover
@@ -553,12 +563,9 @@ h4
 
 .arrow_all_plans,
 .arrow_special_plan
+    margin-left: 7px
     width: 12px
     height: 12.5px
-
-.arrow_all_plans,
-.arrow_special_plan
-    margin-left: 7px
 
 .phone_icon
     margin-right: 7px

@@ -10,14 +10,15 @@ html(lang="en")
         header.header
             .wrapper.container
                 .main_navigation.d-flex
-                    a.logo.d-flex.align-items-center(href="/")
-                        img.mx-2(src="../img/logo.png", alt="")
-                        b trips
+                    a.logo(href="/")
+                        img(src="../img/logo.png", alt="")
+                        p
+                            b trips
                     .burger_menu#burger
                         span.top
                         span.middle
                         span.bottom
-                    nav.top_menu#topMenu
+                    nav#topMenu.top_menu.d-flex.align-items-center
                         ul.list.d-flex.m-0
                             +menu(menu)
                 section.header_section
@@ -29,8 +30,8 @@ html(lang="en")
                 section.pricing_table.d-flex.align-items-center.text-center
                     h3.mb-3 обери свій план подорожі
                     p.discription Наша фірма -лідер на ринку у своїй сфері
-                    svg.arrow
-                        a(href="#main")
+                    a(href="#main")
+                        svg.arrow
                             use(xlink:href="#arrow")
         main.main#main
             .wrapper.container
@@ -38,7 +39,7 @@ html(lang="en")
                     .col-lg-3
                         h3 про нашу компанію
                         p.discription.grey.mt-3.mb-5 Наша компанія пропонує ряд цікавих-розважальних послуг, які принесуть вам ряд вражень!
-                        .more_detail_button.mb-4
+                        .more_detail_button.mb-20
                             a(href="#") Детальніше
                         p.additional_text.m-0 * - зверніть увагу, зміна ціни може залежати від курсу долара.
                     .col-lg-9
@@ -51,23 +52,28 @@ html(lang="en")
                                 svg.arrow_all_plans
                                     use(xlink:href="#arrow_all_plans")
                 hr
-                .main_offer.d-flex
-                    picture
-                        source(srcset="img/main_offer_image.webp", type="image/webp")
-                        img.main_offer_picture(src="img/main_offer_image.jpg", alt="")
-                    .main_offer_plan
+                .main_offer.row
+                    .col-md-4
+                        .pt-2
+                            picture
+                                source(srcset="img/main_offer_image.webp", type="image/webp")
+                                img.main_offer_picture(src="img/main_offer_image.jpg", alt="")
+                    .col-md-8.main_offer_plan
                         h3 Дивовижний безлюдний острів, який зводить людей з розуму
-                        .d-flex
-                            .main_plan_discription
-                                p.discription.dark Пхукет - курортно-туристична Мекка Таїланду. Білосніжний пісок, і бірюзове море, і мальовничі скелі, а на них же, трохи вище - буйна тропічна рослинність. Все це можна побачити на власні очі.
-                                .main_offer_buttons.d-flex
-                                    .buy_button
+                        .row.gx-3
+                            .col-md-8.main_plan_discription
+                                .plan_discription.discription.dark
+                                    p.m-0 Пхукет - курортно-туристична Мекка Таїланду.
+                                    p.m-0 Білосніжний пісок, і бірюзове море, і мальовничі скелі, а на них же, трохи вище - буйна тропічна рослинність. Все це можна побачити на власні очі.
+                                .d-flex.column-gap-2
+                                    .main_offer_button.buy_button
                                         a(href="#") замовити тур
                                     .offer_more_detail_button
                                         a(href="#") детальніше
-                            .main_plan.text-center
-                                p.price.main_plan_price 575 грн./день
-                                p.additional_text.main_offer_discription В дану вартість входить обслуговування персоналу, вечеря і захоплюючі історії.
+                            .col-md-4.text-center
+                                .main_plan.h-100
+                                    p.price.main_plan_price 575 грн./день
+                                    p.additional_text.main_offer_discription.m-0 В дану вартість входить обслуговування персоналу, вечеря і захоплюючі історії.
             .important_proposal.d-flex.py-5
                 .wrapper.container
                     .row.gx-5.py-5
