@@ -6,7 +6,7 @@ html(lang="en")
         meta(name="viewport", content="width=device-width, user-scalable=yes, initial-scale=1.0, maximum-scale=2.0, minimum-scale=1.0")
         link(rel="stylesheet", href="css/styles.css")
         title Document
-    body 
+    body.m-0
         header.header
             .wrapper.container
                 .main_navigation.d-flex
@@ -49,7 +49,7 @@ html(lang="en")
                             +figures(figures.special_order)
                         .all_plans_button.text-center
                             a.d-inline-block(href="#") дивитись усі плани
-                                svg.arrow_all_plans
+                                svg.arrow_all_plans.ms-2
                                     use(xlink:href="#arrow_all_plans")
                 hr
                 .main_offer.row
@@ -114,8 +114,8 @@ html(lang="en")
                             .px-1
                                 h3 додаткова інформація
                         .col-lg-3
-                            .px-1
-                                .work_schedule
+                            .px-1.h-100
+                                .work_schedule.d-flex.h-100
                                     .file.d-flex
                                         picture
                                             source(srcset="img/file_icons.webp", type="image/webp")
@@ -123,12 +123,12 @@ html(lang="en")
                                         .file_info
                                             h4.white Графік роботи готелів.xls
                                             p.additional_text.m-0 Розмір файла: 10Mb
-                                    p.work_schedule_discription.mb-5 Розклад роботи усіх наших готелів, можете знайти за цим посиланням. Та додатково завантажити їх фото.
+                                    p.work_schedule_discription.h-100 Розклад роботи усіх наших готелів, можете знайти за цим посиланням. Та додатково завантажити їх фото.
                                     .download_button
                                         a.d-inline-block(href="#") скачати
                         .col-lg-3
-                            .px-1
-                                .nutrition_information
+                            .px-1.h-100
+                                .nutrition_information.d-flex.h-100
                                     .file.d-flex
                                         picture
                                             source(srcset="img/file_icons.webp", type="image/webp")
@@ -136,7 +136,7 @@ html(lang="en")
                                         .file_info
                                             h4.white Інформація про харчування.xls
                                             p.additional_text.m-0 Розмір файла: 10Mb
-                                    p.nutrition_information_discription У будь-якому нашому турі включені сніданки у вартість. Якщо ж бажаєте замовити додотково, то ознайомтесь з умовами.
+                                    p.nutrition_information_discription.h-100 У будь-якому нашому турі включені сніданки у вартість. Якщо ж бажаєте замовити додотково, то ознайомтесь з умовами.
                                     .download_button
                                         a.d-inline-block(href="#") скачати
                         .col-lg-3
@@ -144,8 +144,8 @@ html(lang="en")
                                 .support.text-center
                                     h4.absolute задати питання
                                     p.support_discription Скажіть доброго дня нашому консультанту, і ми з радістю відповімо на Ваші запитання
-                                    a.d-flex.align-items-center.text-center(href="#")
-                                        svg.phone_icon
+                                    a.d-flex.align-items-center.text-center.mb-4(href="#")
+                                        svg.phone_icon.me-2
                                             use(xlink:href="#phone_icon")
                                         .phone
                                             h4.m-0 +38 (050) 56 98 511

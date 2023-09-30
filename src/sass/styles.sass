@@ -4,8 +4,7 @@
     @media screen and ( min-width: #{$size}px )
         @content
 
-body
-    margin: 0
+// body
 
 hr
     margin: 5px 0
@@ -232,19 +231,17 @@ h4
 
     figure
         position: relative
-        padding: 0 15px
-        margin: 0
 
     figcaption
-        padding: 30px 20px
+        padding: 28px 20px
         transition: all .5s ease
 
         &:hover
             background-color: #fff
             box-shadow: 0px 4px 10.5px rgba(3,20,31,0.05)
 
-    img
-        margin-bottom: 25px
+    // img
+    //     margin-bottom: 25px
 
 .favorite_plans_mark
     position: absolute
@@ -261,6 +258,10 @@ h4
     left: 10px
     width: 16px
     height: 16px
+
+.offers_icon
+    width: 58px
+    height: 58px
 
 .price
     margin: 10px 0
@@ -436,7 +437,6 @@ h4
 
     figure
         position: relative
-        padding: 0 15px
 
         figcaption
             transition: all .5s ease
@@ -461,16 +461,16 @@ h4
     padding: 82px 0
 
 .work_schedule
-    padding: 25px 20px 30px
+    justify-content: end
+    flex-direction: column
+    padding: 24px 20px 30px
     // max-width: 270px
-    width: 100%
+    // width: 100%
     background: url(../img/work_schedule.jpg) center / cover
-
-.file
-    margin-bottom: 20px
 
 .work_schedule_discription,
 .nutrition_information_discription
+    margin: 16px 0 27px
     font: 400 13px/19px "Rubik"
     color: #fefefe
 
@@ -478,7 +478,7 @@ h4
 
     a
         position: relative
-        padding: 6px 16px 6px 35px
+        padding: 7px 16px 6px 35px
         font: 400 12px "Rubik"
         text-decoration: none
         text-transform: uppercase
@@ -496,17 +496,16 @@ h4
 
 
 .nutrition_information
-    padding: 25px 20px 30px
+    justify-content: end
+    flex-direction: column
+    padding: 24px 20px 30px
     // max-width: 270px
-    width: 100%
+    // width: 100%
     background: url(../img/nutrition_information.jpg) center / cover
-
-.nutrition_information_discription
-    margin-bottom: 27px
 
 .support
     position: relative
-    padding: 38px 43px 0
+    padding: 38px 42px 0
     // padding-top: 38px
     width: 100%
 
@@ -528,7 +527,6 @@ h4
         border-left: none
 
     a
-        margin-bottom: 23px
         justify-content: center
         text-decoration: none
 
@@ -563,13 +561,11 @@ h4
 
 .arrow_all_plans,
 .arrow_special_plan
-    margin-left: 7px
     width: 12px
     height: 12.5px
 
 .phone_icon
-    margin-right: 7px
-    width: 17px
+    width: 21px
     height: 21px
 
 .phone
