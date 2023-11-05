@@ -4,6 +4,11 @@
     @media screen and ( min-width: #{$size}px )
         @content
 
+html
+    font-size: 14px
+    +media(768)
+        font-size: 16px
+
 // body
 
 hr
@@ -12,9 +17,16 @@ hr
 h2
     letter-spacing: 0.12rem
     line-height: 4.12rem
-    font: 400 3.5rem "Rubik"
+    font: 400 1.96rem "Rubik"
     text-transform: uppercase
     color: #ffffff
+    +media(398)
+        font: 400 2.62rem "Rubik"
+    +media(504)
+        font: 400 3rem "Rubik"
+    +media(1200)
+        font: 400 3.5rem "Rubik"
+        
 
 h3
     letter-spacing: 0.06rem
@@ -32,16 +44,22 @@ h4
     max-width: 78rem
 
 .header
-    padding-top: 1.87rem
-    background: linear-gradient(transparent 75%, #f5f8fa 100%), url(../img/header_background.jpg) center bottom / cover
+    padding-top: 1.5rem
+    background: linear-gradient(transparent 75%, #f5f8fa 100%), #4db1f2 url(../img/header_background.webp) center bottom / cover
 
     h1
         margin-bottom: 0.62rem
         letter-spacing: 0.06rem
-        font: 400 4.5rem/1em "Rubik"
+        font: 400 2.8rem/1em "Rubik"
         text-align: center
         text-transform: uppercase
         color: #fff
+        +media(553)
+            font: 400 3.25rem/1em "Rubik"
+        +media(618)
+            font: 400 3.89rem/1em "Rubik"
+        +media(768)
+            font: 400 4.5rem/1em "Rubik"
 
 .main_navigation
     justify-content: space-between
@@ -65,20 +83,13 @@ h4
         top: 0.31rem
 
     p
-        margin-bottom: 0.87rem
+        margin-bottom: 0
 
     b
         font: 500 2.25rem "Exo 2"
 
 .list
     list-style: none
-
-    li
-        
-        &:last-child
-
-            a
-                padding-right: 0
 
     a
         display: inline-block
@@ -87,28 +98,75 @@ h4
         font: 400 0.87rem "Rubik"
         text-decoration: none
         text-transform: uppercase
+        white-space: nowrap
         color: #fff
         transition: all .5s ease
 
         &:hover
             color: #ffb700
 
+    li:last-child a
+        +media(992)
+            padding-right: 0
+
+.burger_menu
+    position: relative
+    width: 2.5rem
+    height: 2.5rem
+
+.top,
+.middle,
+.bottom
+    position: absolute
+    left: .2rem
+    width: 2rem
+    height: .2rem
+    background-color: #fff
+    border-radius: .18rem
+    transition: all 0.4s ease
+
+.top
+    transform: rotate(45deg)
+
+.middle
+    opacity: 0
+    transform: translateY(-50%)
+    transition-duration: 0
+
+.bottom
+    transform: rotate(-45deg)
+
+.collapsed .top
+    top: .6rem
+    transform: rotate(0)
+
+.collapsed .middle
+    opacity: 1
+
+.collapsed .bottom
+    bottom: .6rem
+    transform: rotate(0)
+
 .header_section
-    padding: 12.5rem 0 16.43rem
+    padding: 16.5rem 0 16.43rem
 
 .header_discription
     position: relative
     flex-direction: column
+    max-width: 43.75rem
     // margin: 170rem 0
 
     &:before,
     &:after
         position: absolute
         content: ''
-        left: calc(50% - 11.56rem)
-        width: 23.12rem
+        left: 50%
+        width: 73%
         border: 0.25rem solid #fff
+        transform: translateX(-50%)
         opacity: 0.102
+        +media(576)
+            width: 53%
 
     &:before
         top: -3.12rem
@@ -116,13 +174,13 @@ h4
         border-bottom: none
 
     &:after
-        bottom: 3.12rem
+        bottom: -4rem
         height: 5.81rem
         border-top: none
         z-index: 0
 
     p
-        margin: 0.62rem 0 1.56rem
+        margin: 0.8rem 0 1.6rem
         max-width: 33rem
 
 .discription
@@ -141,6 +199,7 @@ h4
         font: 400 16px "Rubik"
         text-transform: uppercase
         text-decoration: none
+        white-space: nowrap
         color: #fdfcfb
         background-color: #ffb700
         border-radius: 1.43rem
@@ -173,41 +232,11 @@ h4
     // margin: auto
     width: 1.12rem
     height: 1.25rem
+    animation: arrow 1s linear alternate infinite
 
-//     a
-//         position: relative
-//         // width: 100%
-//         // height: 100%
-//         // transition: all .5s ease
-
-//         // &:hover
-//         //     border-radius: 32rem
-//         //     background-color: $transparent
-//         //     border-color: #fff
-
-//         //     &:before
-//         //         background-color: #fff
-
-//         //     &:after
-//         //         border: 2rem solid #fff
-//         //         border-top: none
-//         //         border-right: none
-        
-//         &:before,
-//         &:after
-//             position: absolute
-//             content: ''
-//             left: 0
-//             bottom: -44px
-//             width: 12px
-//             height: 12px
-//             border: 3px solid #000
-//             border-top: none
-//             border-right: none
-//             transform: rotate(-45deg)
-
-//         &:after
-//             bottom: -53px
+@keyframes arrow
+    100%
+        transform: translateY(20px)
 
 .main
     background-color: #f5f8fa
@@ -236,18 +265,28 @@ h4
         padding: 1.75rem 1.25rem
         transition: all .5s ease
 
+        a
+            position: absolute
+            top: 0
+            right: 0
+            bottom: 0
+            left: 0
+
         &:hover
             background-color: #fff
             box-shadow: 0 0.25rem 0.65rem rgba(3,20,31,0.05)
+
+.figure:last-child
+    margin-left: auto
+    margin-right: auto
 
     // img
     //     margin-bottom: 25px
 
 .favorite_plans_mark
     position: absolute
-    // display: inline-block
     top: 0
-    left: 0.93rem
+    left: 0
     width: 3.75rem
     height: 3.75rem
     background: linear-gradient(to right bottom, #26cb15 50%, transparent 50%)
@@ -263,6 +302,9 @@ h4
     width: 3.62rem
     height: 3.62rem
 
+.orange_svg
+    fill: #ffb700
+
 .price
     margin: 0.62rem 0
     font: 400 1.5rem "Rubik"
@@ -273,46 +315,50 @@ h4
     font: 400 0.81rem "Rubik"
     color: #999
 
-.all_plans_button
+.all_plans_button a
+    position: relative
+    padding-right: 1.12rem
+    font: 400 0.75rem "Rubik"
+    text-decoration: none
+    text-transform: uppercase
+    color: #09f
 
-    a
-        // position: relative
-        // max-width: 140px
-        font: 400 0.75rem "Rubik"
-        text-decoration: none
-        text-transform: uppercase
-        color: #09f
+    &:hover span:before
+        transform: scaleX(1)
 
-        // &:before,
-        // &:after
-        //     position: absolute
-        //     content: ''
-        //     right: -18px
-        //     top: 1px
-        //     width: 11px
-        //     height: 11px
-        //     background-color: rgba(255,183,0,0)
-        //     border: 1px solid #09f
-        //     border-radius: 5px
+    span
+        position: relative
 
-        // &:after
-        //     top: 4px
-        //     right: -14.5px
-        //     width: 5px
-        //     height: 5px
-        //     border-top: none
-        //     border-left: none
-        //     border-radius: 2px
-        //     transform: rotate(-45deg)
+        &:before
+            position: absolute
+            content: ''
+            bottom: -3px
+            left: 0
+            width: 100%
+            height: 1px
+            background-color: #09f
+            transform: scaleX(0)
+            transform-origin: left
+            transition: transform .5s ease-in
+
+    &:hover svg
+        transform: translate(1rem, -50%) rotate(360deg)
+
+    svg
+        position: absolute
+        top: 50%
+        right: 0
+        transform: translateY(-50%)
+        transition: all 1s ease-out .5s
 
 .main_offer
     padding: 4.68rem 0 4.37rem
 
     h3
         margin-bottom: 1.12rem
-
-// .main_offer_plan
-//     padding-bottom: 8px
+        font: 400 1.75rem "Rubik"
+        +media(429)
+            font: 400 2.25rem "Rubik"
 
 .plan_discription
     margin-bottom: 2rem
@@ -320,33 +366,25 @@ h4
 .dark
     color: #333
 
-// .main_offer_buttons
-//     column-gap: 10px
-//     pow-gap: 10px
+.buy_button a
+    padding: 0.84rem 1.5rem
 
-.buy_button
+.offer_more_detail_button a
+    display: inline-block
+    padding: 0.71rem 2.06rem
+    letter-spacing: 0.06rem
+    font: 400 1rem "Rubik"
+    text-transform: uppercase
+    text-decoration: none
+    color: #09f
+    background-color: rgba(0,153,255,0)
+    border: 0.12rem solid #09f
+    border-radius: 1.43rem
+    transition: all .5s ease
 
-    a
-        padding: 0.84rem 1.5rem
-
-.offer_more_detail_button
-    
-    a
-        display: inline-block
-        padding: 0.71rem 2.06rem
-        letter-spacing: 0.06rem
-        font: 400 1rem "Rubik"
-        text-transform: uppercase
-        text-decoration: none
-        color: #09f
-        background-color: rgba(0,153,255,0)
-        border: 0.12rem solid #09f
-        border-radius: 1.43rem
-        transition: all .5s ease
-
-        &:hover
-            color: #fff
-            background-color: #09f
+    &:hover
+        color: #fff
+        background-color: #09f
 
 .main_plan
     padding: 2.62rem 2.62rem 2.25rem
@@ -358,7 +396,7 @@ h4
     margin: 0 0 0.87rem
 
 .important_proposal
-    background: linear-gradient(rgba(#142f3f, .8), rgba(#142f3f, .8)), url(../img/important_proposal.jpg) center / cover
+    background: linear-gradient(rgba(#142f3f, .8), rgba(#142f3f, .8)), #46535d url(../img/important_proposal.webp) center / cover
 
 .proposal_discription
     // row-gap: 15px
@@ -367,7 +405,7 @@ h4
         margin-bottom: 0.12rem
 
     p
-        max-width: 30rem
+        margin: 1rem 0 1.87rem
         font: 400 1rem/1.5rem "PT Sans"
         color: #fff
 
@@ -386,8 +424,8 @@ h4
         position: absolute
         content: ''
         top: 0
-        width: 12.5rem
-        height: 14.68rem
+        width: 37.5%
+        height: 100%
         border: 0.25rem solid #fff
         opacity: 0.102
 
@@ -399,19 +437,15 @@ h4
         right: 0
         border-left: none
 
-.review_text
-    position: relative
-    margin-bottom: 0.75rem
+.quote_icon
+    position: absolute
+    top: -0.8rem
+    left: calc(50% - 1.3rem)
+    width: 2.62rem
+    height: 2.31rem
 
-    &:before
-        position: absolute
-        content: " ” "
-        left: calc(50% - 2.5rem)
-        top: 0.62rem
-        // width: 30px
-        // height: 30px
-        font-size: 12.5rem
-        color: #ffb700
+.review_text
+    margin-bottom: 0.75rem
 
 .white
     color: #fff
@@ -429,7 +463,7 @@ h4
         top: 1.62rem
         width: 5.37rem
         height: 5.37rem
-        background: url(../img/client_photo.jpg)
+        background: url(../img/client_photo.webp)
         border-radius: 50%
 
 .special_plans
@@ -438,32 +472,75 @@ h4
 .title_plans
     margin-bottom: 2.06rem
 
-.special_proposals
+    h3
+        font: 400 1.62rem "Rubik"
+        +media(433)
+            font: 400 2.25rem "Rubik"
 
-    figure
-        position: relative
+.special_proposals figure
+    position: relative
 
-        figcaption
-            transition: all .5s ease
+    figcaption
+        // min-height: 22.68rem
+        transition: all .5s ease
 
-            &:hover
-                background-color: #fff
-                box-shadow: 0 0.25rem 0.65rem rgba(3,20,31,0.05)
+        &:hover
+            background-color: #fff
+            box-shadow: 0 0.25rem 0.65rem rgba(3,20,31,0.05)
+
+.img_link
+    position: absolute
+    top: 0
+    right: 0
+    bottom: 4rem
+    left: 0
 
 .special_plan_discription
     padding: 1.25rem
 
+    h4
+        white-space: nowrap
+
+    .product_description
+        min-height: 3.8rem
+
 .buy_block
     justify-content: space-between
 
-    a
-        font: 400 0.81rem "Rubik"
-        text-transform: uppercase
-        text-decoration: none
-        color: #ffb700
+.special_plan_button a
+    position: relative
+    padding-right: 1.12rem
+    font: 400 0.81rem "Rubik"
+    text-decoration: none
+    text-transform: uppercase
+    color: #ffb700
+
+    &:hover span:before
+        transform: scaleX(1)
+
+    span
+        position: relative
+
+        &:before
+            position: absolute
+            content: ''
+            bottom: -3px
+            left: 0
+            width: 100%
+            height: 1px
+            background-color: #ffb700
+            transform: scaleX(0)
+            transform-origin: left
+            transition: transform .5s ease-in
+
+    svg
+        position: absolute
+        top: 50%
+        right: 0
+        transform: translateY(-50%)
 
 .additional_information
-    padding: 5.12rem 0
+    padding: 4.12rem 0
 
 .work_schedule
     justify-content: end
@@ -471,34 +548,50 @@ h4
     padding: 1.5rem 1.25rem 1.87rem
     // max-width: 270px
     // width: 100%
-    background: url(../img/work_schedule.jpg) center / cover
+    background: #46535d url(../img/work_schedule.webp) center / cover
 
-.work_schedule_discription,
-.nutrition_information_discription
+.file
+    min-height: 66px
+
+.file_icon
+    width: 40px
+    height: 46px
+
+.additional_information_discription
     margin: 1rem 0 1.68rem
-    font: 400 0.81rem/1.18rem "Rubik"
+    font: 400 .75rem/1.18rem "Rubik"
     color: #fefefe
+    +media(1400)
+        font-size: .81rem
 
-.download_button
+.download_button a
+    position: relative
+    padding: 0.43rem 1rem 0.37rem 2.16rem
+    font: 400 0.75rem "Rubik"
+    text-decoration: none
+    text-transform: uppercase
+    color: #ffb700
+    border: 2px solid #ffb700
+    border-radius: 1rem
 
-    a
-        position: relative
-        padding: 0.43rem 1rem 0.37rem 2.18rem
-        font: 400 0.75rem "Rubik"
-        text-decoration: none
-        text-transform: uppercase
-        color: #ffb700
-        border: 2px solid #ffb700
-        border-radius: 1rem
+    &:hover
+        color: #fff
+        background-color: #ffb700
+        border-color: transparent
+        transition: all .5s ease
 
-        &:before
-            position: absolute
-            content: ''
-            left: 1rem
-            width: 0.93rem
-            height: 0.68rem
-            background: url(../img/download_icons.png)
+    &:hover svg
+        fill: #fff
 
+    svg
+        position: absolute
+        top: 50%
+        left: .75rem
+        transform: translateY(-50%)
+
+.download_icons
+    width: 1.37rem
+    height: .93rem
 
 .nutrition_information
     justify-content: end
@@ -506,11 +599,11 @@ h4
     padding: 1.5rem 1.25rem 1.87rem
     // max-width: 270px
     // width: 100%
-    background: url(../img/nutrition_information.jpg) center / cover
+    background: #46535d url(../img/nutrition_information.webp) center / cover
 
 .support
     position: relative
-    padding: 2.37rem 3.23rem 0
+    padding: 2.37rem 2.68rem 2.77rem
     // padding-top: 38px
     width: 100%
 
@@ -519,8 +612,8 @@ h4
         position: absolute
         content: ''
         top: 0
-        width: 3rem
-        height: 16.87rem
+        width: 17%
+        height: 100%
         border: 4px solid #ffb700
 
     &:before
@@ -545,13 +638,13 @@ h4
             top: 2.25rem
             width: 5.37rem
             height: 5.37rem
-            background: url(../img/consultant_photo.jpg)
+            background: url(../img/consultant_photo.webp)
             border-radius: 50%
 
 .absolute
     position: absolute
     top: -0.62rem
-    left: 4.5rem
+    left: calc(50% - 4.3rem)
 
 .support_discription
     padding: 0 1.06rem
@@ -572,29 +665,23 @@ h4
 .phone_icon
     width: 1.31rem
     height: 1.31rem
+    fill: #09f
 
-.phone
+.phone h4
+    // padding-left: 22px
+    color: #09f
 
-    h4
-        color: #0099ff
-
-.footer
-
-    h4
-        padding: 1.12rem 0 0.93rem
-        color: #fff
+.footer h4
+    padding: 1.12rem 0 0.93rem
+    color: #fff
         
 .footer_main
     min-height: 25rem
-    background: linear-gradient(#f5f8fa 0%, transparent 15%), url(../img/footer_background.jpg) center / cover
+    background: linear-gradient(#f5f8fa 0%, transparent 15%), url(../img/footer_background.webp) center / cover
     // background: linear-gradient(transparent 75%, #f5f8fa 100%), url(../img/header_background.jpg) center bottom / cover
 
 .footer_copy
-        background-color: #1a1a1a
+    background-color: #1a1a1a
 
 .sprite
     display: none
-
-
-
-    

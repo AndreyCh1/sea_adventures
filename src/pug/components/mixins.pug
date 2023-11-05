@@ -2,11 +2,11 @@
     let menu = [
         {
             name: "головна",
-            url: "#"
+            url: "/"
         },
         {
             name: "послуги",
-            url: "#"
+            url: "#main"
         },
         {
             name: "про компанію",
@@ -14,7 +14,7 @@
         },
         {
             name: "акції",
-            url: "#"
+            url: "#special_plans"
         },
         {
             name: "партнери",
@@ -22,11 +22,11 @@
         },
         {
             name: "відгуки",
-            url: "#"
+            url: "#review"
         },
         {
             name: "контакти",
-            url: "#"
+            url: "#additional_information"
         }
     ]
 
@@ -58,7 +58,7 @@
         },
         special_order: {
             fav: true,
-            id: "#",
+            id: "#special_order_icon",
             src: "img/special_order",
             alt: "special_order_plan",
             span: "Особливе замовлення",
@@ -124,39 +124,39 @@ mixin menu (items)
             a(href=item.url) #{item.name}
 
 mixin figures (item)
-    figure.col-md-4.text-center.px-3.m-0
-        figcaption.h-100
-            if item.fav
-                .favorite_plans_mark
-                    svg.fav_icon
-                        use(xlink:href="#fav_icon")
-            else
-            //- picture
-            //-     source(srcset=item.src + ".webp", type="image/webp")
-            //-     img.picture(src=item.src + ".png", alt=item.alt)
-            svg.offers_icon
-                use(xlink:href=item.id)
-            h4.mt-3.mb-2 #{item.span}
-            p.price #{item.price} грн*
-            p.product_description.text-start #{item.description}
+    .figure.col-md-6.col-lg-4.g-4
+        figure.text-center.m-0
+            figcaption.h-100
+                if item.fav
+                    .favorite_plans_mark
+                        svg.fav_icon
+                            use(xlink:href="#fav_icon")
+                a(href="#")
+                svg.offers_icon.orange_svg
+                    use(xlink:href=item.id)
+                h4.mt-3.mb-2 #{item.span}
+                p.price #{item.price} грн*
+                p.product_description.text-start #{item.description}
 
 mixin special (item)
-    figure.col-md-3.px-3.m-0
-        figcaption.h-100
-            if item.fav
-                .favorite_plans_mark
-                    svg.fav_icon
-                        use(xlink:href="#fav_icon")
-            else
-            picture
-                source(srcset=item.src + ".webp", type="image/webp")
-                img.picture.w-100(src=item.src + ".png", alt=item.alt)
-            .special_plan_discription
-                h4 #{item.span}
-                p.product_description.text-start #{item.description}
-                .buy_block.d-flex.align-items-center
-                    p.price.m-0 #{item.price} грн.
-                    .d-flex.align-items-center
-                        a.d-block(href="#") замовити
-                        svg.arrow_special_plan.ms-2
-                            use(xlink:href="#arrow_special_plan")
+    .col-sm-6.col-md-6.col-lg-4.col-xl-3
+        figure.m-0
+            figcaption.h-100
+                if item.fav
+                    .favorite_plans_mark
+                        svg.fav_icon
+                            use(xlink:href="#fav_icon")
+                a.img_link(href="#")
+                picture
+                    source(srcset=item.src + ".webp", type="image/webp")
+                    img.picture.w-100(src=item.src + ".png", alt=item.alt, loading="lazy")
+                .special_plan_discription
+                    h4 #{item.span}
+                    p.product_description.text-start #{item.description}
+                    .buy_block.d-flex.align-items-center
+                        p.price.m-0 #{item.price} грн.
+                        .special_plan_button.d-flex.align-items-center
+                            a.d-block(href="#")
+                                span замовити
+                                svg.arrow_special_plan
+                                    use(xlink:href="#arrow_special_plan")

@@ -5,24 +5,32 @@ html(lang="en")
         meta(charset="UTF-8")
         meta(name="viewport", content="width=device-width, user-scalable=yes, initial-scale=1.0, maximum-scale=2.0, minimum-scale=1.0")
         link(rel="stylesheet", href="css/styles.css")
-        title Document
+        title S.trips - морські пригоди, туристичнае агенство
     body.m-0
         header.header
-            .wrapper.container
-                .main_navigation.d-flex
-                    a.logo(href="/")
-                        img(src="../img/logo.png", alt="")
-                        p
-                            b trips
-                    .burger_menu#burger
-                        span.top
-                        span.middle
-                        span.bottom
-                    nav#topMenu.top_menu.d-flex.align-items-center
-                        ul.list.d-flex.m-0
-                            +menu(menu)
+            .container
+                .main_navigation
+                    //- .burger_menu#burger
+                    //-     span.top
+                    //-     span.middle
+                    //-     span.bottom
+                    nav.navbar.navbar-expand-lg(data-bs-theme="dark")
+                        .d-flex.justify-content-between.w-100
+                            a.logo(href="#")
+                                img(src="../img/logo.png", alt="S.trips - морські пригоди, туристичнае агенство", loading="lazy")
+                                p
+                                    b trips
+                            button.navbar-toggler.burger_menu.shadow-none.border-0.collapsed(type="button", data-bs-toggle="collapse", data-bs-target="#navbarSupportedContent", aria-controls="navbarSupportedContent", aria-expanded="false", aria-label="Toggle navigation")
+                                //- span.navbar-toggler-icon
+                                span.top
+                                span.middle
+                                span.bottom
+                        #navbarSupportedContent.collapse.navbar-collapse.flex-grow-0.pt-5.pt-lg-0
+                                ul.navbar-nav.mb-2.mb-lg-0.list.align-items-center
+                                    +menu(menu)
                 section.header_section
-                    .header_discription.d-flex.text-center
+                    .header_discription.d-flex.mx-auto.text-center
+                        i.bi.bi-chat-quote-fill
                         h1.mb-1 Морські пригоди
                         p.discription.align-self-center Не важливо, чи Ваша мандрівка належить до елітного рівня чи до економваріанту, туроператор S trips потурбується, щоб Ви залишились задоволеними!
                         .more_detail_button.text-center
@@ -34,129 +42,134 @@ html(lang="en")
                         svg.arrow
                             use(xlink:href="#arrow")
         main.main#main
-            .wrapper.container
-                .travel_plans.row
-                    .col-lg-3
-                        h3 про нашу компанію
-                        p.discription.grey.mt-3.mb-5 Наша компанія пропонує ряд цікавих-розважальних послуг, які принесуть вам ряд вражень!
-                        .more_detail_button.mb-20
-                            a(href="#") Детальніше
-                        p.additional_text.m-0 * - зверніть увагу, зміна ціни може залежати від курсу долара.
-                    .col-lg-9
-                        .offers.row
-                            +figures(figures.bicycle_tour)
-                            +figures(figures.excursion_to_the_island)
-                            +figures(figures.special_order)
-                        .all_plans_button.text-center
-                            a.d-inline-block(href="#") дивитись усі плани
-                                svg.arrow_all_plans.ms-2
-                                    use(xlink:href="#arrow_all_plans")
-                hr
-                .main_offer.row
-                    .col-md-4
-                        .pt-2
-                            picture
-                                source(srcset="img/main_offer_image.webp", type="image/webp")
-                                img.main_offer_picture(src="img/main_offer_image.jpg", alt="")
-                    .col-md-8.main_offer_plan
-                        h3 Дивовижний безлюдний острів, який зводить людей з розуму
-                        .row.gx-3
-                            .col-md-8.main_plan_discription
-                                .plan_discription.discription.dark
-                                    p.m-0 Пхукет - курортно-туристична Мекка Таїланду.
-                                    p.m-0 Білосніжний пісок, і бірюзове море, і мальовничі скелі, а на них же, трохи вище - буйна тропічна рослинність. Все це можна побачити на власні очі.
-                                .d-flex.column-gap-2
-                                    .main_offer_button.buy_button
-                                        a(href="#") замовити тур
-                                    .offer_more_detail_button
-                                        a(href="#") детальніше
-                            .col-md-4.text-center
-                                .main_plan.h-100
-                                    p.price.main_plan_price 575 грн./день
-                                    p.additional_text.main_offer_discription.m-0 В дану вартість входить обслуговування персоналу, вечеря і захоплюючі історії.
-            .important_proposal.d-flex.py-5
-                .wrapper.container
-                    .row.gx-5.py-5
-                        .proposal_discription.col-lg-6
-                            .title_discription
-                                h2 спіймай хвилю
-                                h2.blue живи яскраво!
-                            p Полюбляєш екстрим та пригоди? Тоді тобі точно до нас! Мрієш стати на сапборд, але ніяк не міг наважитсь? Наші досвдчені інструктори навчать тебе вміло «піймати хвилі» та відчути себе справжнім сьорфером!
-                            .more_detail_button
+            .wrapper
+                .container
+                    .travel_plans.row
+                        .col-xl-3.text-center.text-xl-start.mb-5.m-xl-0
+                            h3 про нашу компанію
+                            p.discription.grey.mt-3.mb-5 Наша компанія пропонує ряд цікавих-розважальних послуг, які принесуть вам ряд вражень!
+                            .more_detail_button.mb-20
                                 a(href="#") Детальніше
-                        .col-lg-6.text-center
-                            .review
-                                //- picture
-                                //-     source(srcset="img/review_image.webp", type="image/webp")
-                                //-     img(src="img/review_image.png", alt="")
-                                p.discription.text-start.white.review_text Чудова туристична фірма, що повністю виправдала мої очікування від подорожі. Я був приємно вражений екскурсіями, що для мене підібрали, працюють спражні професіонали своєї справи.
-                                h4.white Олег Набережний
-                                p.user_status клієнт
-                                //- picture
-                                //-     source(srcset="img/user_photo.webp", type="image/webp")
-                                //-     img.text-center(src="img/user_photo.jpg", alt="")
-            .special_plans
-                .wrapper.container
-                    .title_plans.text-center
-                        h3.title_special_proposals Спеціальні пропозиції тижня
-                        p.discription.dark Гарячі праозиції, по-швидше обирай і поїхали!
-                    .special_proposals.row
-                        +special(special.romantic_trip)
-                        +special(special.bike_tour)
-                        +special(special.to_the_islands)
-                        +special(special.surfing)
-            .wrapper.container
-                hr
-            .additional_information
-                .wrapper.container
-                    .row.gx-4
-                        .col-lg-3
-                            .px-1
+                            p.additional_text.m-0 * - зверніть увагу, зміна ціни може залежати від курсу долара.
+                        .col-xl-9
+                            .offers.row
+                                +figures(figures.bicycle_tour)
+                                +figures(figures.excursion_to_the_island)
+                                +figures(figures.special_order)
+                            .all_plans_button.text-center
+                                a.d-inline-block(href="#")
+                                    span дивитись усі плани
+                                    svg.arrow_all_plans
+                                        use.use(xlink:href="#arrow_all_plans")
+                    hr
+                    .px-3.px-sm-0
+                        .main_offer.row
+                            .col-md-4.mb-4.m-md-0
+                                .pt-2
+                                    picture
+                                        source(srcset="img/main_offer_image.webp", type="image/webp")
+                                        img.main_offer_picture.w-100(src="img/main_offer_image.jpg", alt="Дивовижний безлюдний острів, який зводить людей з розуму" , loading="lazy")
+                            .col-md-8.main_offer_plan
+                                h3 Дивовижний безлюдний острів, який зводить людей з розуму
+                                .row.g-4.gx-xl-3
+                                    .col-lg-12.col-xl-8.main_plan_discription
+                                        .plan_discription.discription.dark
+                                            p.m-0 Пхукет - курортно-туристична Мекка Таїланду.
+                                            p.m-0 Білосніжний пісок, і бірюзове море, і мальовничі скелі, а на них же, трохи вище - буйна тропічна рослинність. Все це можна побачити на власні очі.
+                                        .d-flex.column-gap-2.row-gap-2.justify-content-center.justify-content-sm-start.flex-wrap
+                                            .main_offer_button.buy_button
+                                                a(href="#") замовити тур
+                                            .offer_more_detail_button
+                                                a(href="#") детальніше
+                                    .col-sm-7.col-md-8.col-lg-5.col-xl-4.text-center
+                                        .main_plan.h-100
+                                            p.price.main_plan_price 575 грн./день
+                                            p.additional_text.main_offer_discription.m-0 В дану вартість входить обслуговування персоналу, вечеря і захоплюючі історії.
+            .important_proposal.d-flex.py-5
+                .wrapper
+                    .container
+                        .px-4.py-5.px-sm-0
+                            .row.gy-5.gx-lg-5
+                                .proposal_discription.col-lg-6
+                                    .title_discription
+                                        h2 спіймай хвилю<br>
+                                            span.blue живи яскраво!
+                                    p Полюбляєш екстрим та пригоди? Тоді тобі точно до нас! Мрієш стати на сапборд, але ніяк не міг наважитсь? Наші досвдчені інструктори навчать тебе вміло «піймати хвилі» та відчути себе справжнім сьорфером!
+                                    .more_detail_button
+                                        a(href="#") Детальніше
+                                .col-lg-6.text-center
+                                    .review#review
+                                        svg.quote_icon.orange_svg
+                                            use(xlink:href="#quote_icon")
+                                        p.discription.text-start.white.review_text Чудова туристична фірма, що повністю виправдала мої очікування від подорожі. Я був приємно вражений екскурсіями, що для мене підібрали, працюють спражні професіонали своєї справи.
+                                        h4.white Олег Набережний
+                                        p.user_status клієнт
+            .wrapper
+                .container
+                    .px-5.px-sm-0
+                        .special_plans#special_plans
+                            .title_plans.text-center
+                                h3.title_special_proposals Спеціальні пропозиції тижня
+                                p.discription.dark Гарячі праозиції, по-швидше обирай і поїхали!
+                            .special_proposals.row.g-4
+                                +special(special.romantic_trip)
+                                +special(special.bike_tour)
+                                +special(special.to_the_islands)
+                                +special(special.surfing)
+                    hr
+                    .additional_information#additional_information
+                        .row.g-4
+                            .col-lg-12.col-xl-3.text-center.text-xl-start
                                 h3 додаткова інформація
-                        .col-lg-3
-                            .px-1.h-100
-                                .work_schedule.d-flex.h-100
-                                    .file.d-flex
-                                        picture
-                                            source(srcset="img/file_icons.webp", type="image/webp")
-                                            img.main_offer_picture.me-3(src="img/file_icons.png", alt="")
-                                        .file_info
-                                            h4.white Графік роботи готелів.xls
-                                            p.additional_text.m-0 Розмір файла: 10Mb
-                                    p.work_schedule_discription.h-100 Розклад роботи усіх наших готелів, можете знайти за цим посиланням. Та додатково завантажити їх фото.
-                                    .download_button
-                                        a.d-inline-block(href="#") скачати
-                        .col-lg-3
-                            .px-1.h-100
-                                .nutrition_information.d-flex.h-100
-                                    .file.d-flex
-                                        picture
-                                            source(srcset="img/file_icons.webp", type="image/webp")
-                                            img.main_offer_picture.me-3(src="img/file_icons.png", alt="")
-                                        .file_info
-                                            h4.white Інформація про харчування.xls
-                                            p.additional_text.m-0 Розмір файла: 10Mb
-                                    p.nutrition_information_discription.h-100 У будь-якому нашому турі включені сніданки у вартість. Якщо ж бажаєте замовити додотково, то ознайомтесь з умовами.
-                                    .download_button
-                                        a.d-inline-block(href="#") скачати
-                        .col-lg-3
-                            .px-1
-                                .support.text-center
+                            .col-md-6.col-lg-4.col-xl-3
+                                .h-100
+                                    .work_schedule.d-flex.h-100
+                                        .file.d-flex
+                                            .svg
+                                                svg.file_icon.me-3.orange_svg
+                                                    use(xlink:href="#file_icon")
+                                            .file_info
+                                                h4.white Графік роботи готелів.xls
+                                                p.additional_text.m-0 Розмір файла: 10Mb
+                                        p.additional_information_discription.h-100 Розклад роботи усіх наших готелів, можете знайти за цим посиланням. Та додатково завантажити їх фото.
+                                        .download_button
+                                            a.d-inline-block(href="#")
+                                                svg.download_icons.orange_svg
+                                                    use(xlink:href="#download_icons")
+                                                |скачати
+                            .col-md-6.col-lg-4.col-xl-3
+                                .h-100
+                                    .nutrition_information.d-flex.h-100
+                                        .file.d-flex
+                                            .svg
+                                                svg.file_icon.me-3.orange_svg
+                                                    use(xlink:href="#file_icon")
+                                            .file_info
+                                                h4.white Інформація про харчування.xls
+                                                p.additional_text.m-0 Розмір файла: 10Mb
+                                        p.additional_information_discription.h-100 У будь-якому нашому турі включені сніданки у вартість. Якщо ж бажаєте замовити додотково, то ознайомтесь з умовами.
+                                        .download_button
+                                            a.d-inline-block(href="#")
+                                                svg.download_icons.orange_svg
+                                                    use(xlink:href="#download_icons")
+                                                |скачати
+                            .col-12.col-sm-7.col-md-6.col-lg-4.col-xl-3.mx-auto.pt-1.pt-lg-0
+                                .support.text-center.px-xl-2.h-100
                                     h4.absolute задати питання
                                     p.support_discription Скажіть доброго дня нашому консультанту, і ми з радістю відповімо на Ваші запитання
-                                    a.d-flex.align-items-center.text-center.mb-4(href="#")
+                                    a.phone.d-flex.mb-4.pb-1(href="#")
                                         svg.phone_icon.me-2
                                             use(xlink:href="#phone_icon")
-                                        .phone
-                                            h4.m-0 +38 (050) 56 98 511
+                                        h4.m-0 +38 (050) 56 98 511
                                     h4.m-0 Анна Миколаївна
                                     p.user_status консультант
-        footer.footer
-            .footer_main
-            .footer_copy.text-center
-                .wrapper.container
-                    h4.m-0 © 2016 Cars.com All rights reserved.
+            footer.footer
+                .footer_main
+                .footer_copy.text-center
+                    .wrapper.container
+                        h4.m-0 © 2016 Cars.com All rights reserved.
         include ../img/svg_sprite/sprite.svg
+        script(src="js/scripts.js")
                                     
 
 
